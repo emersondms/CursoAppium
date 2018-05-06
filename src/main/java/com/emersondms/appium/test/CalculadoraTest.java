@@ -8,7 +8,7 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-public class CalculadoraTeste {
+public class CalculadoraTest {
 
     @Test
     public void deveSomarDoisValores() throws MalformedURLException {

@@ -10,7 +10,7 @@ import org.openqa.selenium.OutputType;
 import java.io.File;
 import java.io.IOException;
 
-public class BaseTeste {
+public class BaseTest {
 
     @Rule
     public TestName testName = new TestName();

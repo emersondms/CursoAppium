@@ -2,9 +2,12 @@ package com.emersondms.appium.page;
 
 import com.emersondms.appium.core.BasePage;
 import io.appium.java_client.MobileBy;
+import io.appium.java_client.MobileElement;
 import org.openqa.selenium.By;
 
 import java.net.MalformedURLException;
+
+import static com.emersondms.appium.core.DriverFactory.getDriver;
 
 public class FormularioPage extends BasePage {
 
@@ -38,6 +41,15 @@ public class FormularioPage extends BasePage {
 
     public boolean isSwitchMarcado() throws MalformedURLException {
         return isCheckMarcado(MobileBy.AccessibilityId("switch"));
+    }
+
+    public void clicarSeekBar(double posicao) throws MalformedURLException {
+        int delta = 50;
+        MobileElement seekBar = getDriver().findElement(MobileBy.AccessibilityId("slid"));
+        int y = seekBar.getLocation().y + (seekBar.getSize().height / 2);
+        int xInicial = seekBar.getLocation().x + delta;
+        int x = (int) (xInicial + ((seekBar.getSize().width - 2 * delta) * posicao));
+        tap(x, y);
     }
 
     public void salvar() throws MalformedURLException {

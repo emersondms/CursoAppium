@@ -1,6 +1,6 @@
 package com.emersondms.appium.test;
 
-import com.emersondms.appium.core.BaseTeste;
+import com.emersondms.appium.core.BaseTest;
 import com.emersondms.appium.page.AccordionPage;
 import com.emersondms.appium.page.MenuPage;
 import org.junit.Test;
@@ -9,7 +9,7 @@ import java.net.MalformedURLException;
 
 import static org.junit.Assert.assertEquals;
 
-public class AccordionTeste extends BaseTeste {
+public class AccordionTest extends BaseTest {
 
     private MenuPage menu = new MenuPage();
     private AccordionPage page = new AccordionPage();

@@ -11,6 +11,10 @@ public class AlertaPage extends BasePage {
         clicarPorTexto("ALERTA CONFIRM");
     }
 
+    public void clicarAlertaSimples() throws MalformedURLException {
+        clicarPorTexto("ALERTA SIMPLES");
+    }
+
     public String obterTituloAlerta() throws MalformedURLException {
         return obterTexto(By.id("android:id/alertTitle"));
     }
@@ -25,5 +29,9 @@ public class AlertaPage extends BasePage {
 
     public void sair() throws MalformedURLException {
         clicarPorTexto("Sair");
+    }
+
+    public void clicarForaCaixa() throws MalformedURLException {
+        tap(100, 150);
     }
 }
