@@ -13,7 +13,7 @@ public class DriverFactory {
     private static AndroidDriver<MobileElement> driver;
 
     public static AndroidDriver<MobileElement> getDriver() throws MalformedURLException {
-        if (driver == null) createDriver();
+        if (driver == null) createTestObjectDriver(); //createDriver();
         return driver;
     }
 
@@ -28,6 +28,15 @@ public class DriverFactory {
         );*/
 
         driver = new AndroidDriver<MobileElement>(new URL("http://0.0.0.0:4723/wd/hub"), caps);
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+    }
+
+    private static void createTestObjectDriver() throws MalformedURLException {
+        DesiredCapabilities caps = new DesiredCapabilities();
+        caps.setCapability("platformName", "Android");
+        caps.setCapability("testobject_api_key", "94537146FBC0432BAE41FEFFAB684152");
+        caps.setCapability("appiumVersion", "1.8.0");
+        driver = new AndroidDriver<MobileElement>(new URL("https://us1.appium.testobject.com/wd/hub"), caps);
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }
 

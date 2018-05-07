@@ -1,6 +1,5 @@
 package com.emersondms.appium.test;
 
-import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 import org.junit.*;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -19,7 +18,7 @@ public class CalculadoraTest {
         caps.setCapability("appPackage", "com.google.android.calculator");
         caps.setCapability("appActivity", "com.android.calculator2.Calculator");
 
-        AndroidDriver<MobileElement> driver = new AndroidDriver(
+        AndroidDriver driver = new AndroidDriver(
             new URL("http://0.0.0.0:4723/wd/hub"), caps
         );
 

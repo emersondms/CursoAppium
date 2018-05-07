@@ -33,7 +33,7 @@ public class BaseTest {
         );
     }
 
-    public void esperar(long tempo) throws InterruptedException {
+    protected void esperar(long tempo) throws InterruptedException {
         Thread.sleep(tempo);
     }
 }
